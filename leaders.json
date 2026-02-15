@@ -60,9 +60,8 @@
 	{ "id":"OP08-098","name":"Kalgara","color":["Yellow"],"image":"images/leaders/OP08-098alt.jpg" },
 	
 	{ "id":"OP09-001","name":"Shanks","color":["Red"],"image":"images/leaders/OP09-001alt.jpg" },
-	{ "id":"OP08-022","name":"Lim","color":["Green","Purple"],"image":"images/leaders/OP09-022alt.jpg" },
-	{ "id":"OP08-061","name":"Monkey.D.Luffy","color":["Purple","Black"],"image":"images/leaders/OP09-061alt.jpg" },
-	{ "id":"OP08-081","name":"Marshall.D.Teach","color":["Black"],"image":"images/leaders/OP09-081alt.jpg" },
+	{ "id":"OP09-022","name":"Lim","color":["Green","Purple"],"image":"images/leaders/OP09-022alt.jpg" },
+	{ "id":"OP09-061","name":"Monkey.D.Luffy","color":["Purple","Black"],"image":"images/leaders/OP09-061alt.jpg" },
 	
 	
 	{ "id":"OP11-001","name":"Koby","color":["Red","Black"],"image":"images/leaders/OP11-001(Alt).jpg" },
@@ -105,10 +104,11 @@
 	{ "id":"ST012-001","name":"Roronoa Zoro & Sanji","color":["Green","Blue"],"image":"images/leaders/ST012-001.jpg" },
 	{ "id":"ST29-001","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/ST29-001.jpg" },
 
-    { "id":"P-011","name":"Uta","color":["Red"],"image":"images/leaders/P-011.jpg" }
+
 
   ]
 }
+
 
 
 
