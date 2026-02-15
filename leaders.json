@@ -92,6 +92,13 @@
 	{ "id":"OP14-079","name":"Crocodile","color":["Black"],"image":"images/leaders/OP14-079(alt).jpg" },
 	{ "id":"OP14-080","name":"Gecko Moria","color":["Black","Yellow"],"image":"images/leaders/OP14-080(alt).jpg" },
 
+	{ "id":"OP15-001","name":"Krieg","color":["Red","Green"],"image":"images/leaders/OP15-001(alt).jpg" },
+	{ "id":"OP15-002","name":"Lucy","color":["Red","Blue"],"image":"images/leaders/OP15-002(alt).jpg" },
+    { "id":"OP15-003","name":"Brook","color":["Black","Green"],"image":"images/leaders/OP15-003(alt).jpg" },  
+	{ "id":"OP15-004","name":"Rebecca","color":["Blue"],"image":"images/leaders/OP15-004(alt).jpg" },
+	{ "id":"OP15-005","name":"Enel","color":["Purple"],"image":"images/leaders/OP15-005(alt).jpg" },
+	{ "id":"OP15-006","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/OP15-006(alt).jpg" },
+
 	{ "id":"EB03-001","name":"Nefeltari Vivi EB03","color":["Red","Blue"],"image":"images/leaders/EB03-001(alt).jpg" },
 	{ "id":"EB04-001","name":"Jewelry Bonney","color":["Red","Yellow"],"image":"images/leaders/EB04-001(alt).jpg" },
 	
@@ -102,6 +109,7 @@
 
   ]
 }
+
 
 
 
