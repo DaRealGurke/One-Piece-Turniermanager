@@ -482,7 +482,7 @@
 
 <body>
   <h1><span class="logo">OP</span>One Piece TCG – Turniermanager</h1>
-  <p class="subheading">Swiss · Ergebniswahl · 30+5 Timer · Deck-Rotation optional · Deck = Leader · Leader aus leaders.json (Auto-Load im Web, Datei-Import offline)</p>
+  <p class="subheading">Swiss · Ergebniswahl · 30+5 Timer · Deck-Rotation optional · Deck = Leader · Leader aus leaders.json (Auto-Load auf GitHub Pages)</p>
 
   <!-- TOP: TURNIERE -->
   <div class="top-section">
@@ -499,12 +499,13 @@
       </div>
 
       <p class="muted" style="margin:8px 0 0;">
-        Turniere werden lokal gespeichert (localStorage). Leader werden aus <b>leaders.json</b> geladen – im Web automatisch, offline per Datei-Auswahl.
+        Turniere werden lokal gespeichert (localStorage).
+        Leader werden automatisch aus <b>leaders.json</b> geladen (GitHub Pages) oder optional per Datei-Auswahl.
         Bilder: <b>images/leaders/</b>
       </p>
 
       <div class="field-row" style="margin-top:10px;">
-        <button class="secondary" onclick="openLeadersFilePicker()">Leader JSON laden</button>
+        <button class="secondary" onclick="openLeadersFilePicker()">Leader JSON manuell laden</button>
         <button class="secondary" onclick="clearLeadersCache()">Leader Cache löschen</button>
         <span class="muted" id="leadersStatus" style="align-self:center;"></span>
       </div>
@@ -734,7 +735,7 @@
 
 <script>
 /* =======================
-   LEADERS: Auto-Load (Web) + Datei-Import (offline) + Cache
+   LEADERS: Auto-Load via fetch + Datei-Import + Cache
 ======================= */
 const LEADERS_CACHE_KEY = "op_tcg_leaders_db_v1";
 let LEADERS = [];
@@ -742,6 +743,7 @@ let LEADERS = [];
 function leaderLabel(l){ return `${l.name} (${l.color})`; }
 function normalize(s){ return (s || "").trim().toLowerCase(); }
 
+// Datenformat: { leaders: [ {id,name,color,image}, ... ] }
 function normalizeLeaderJson(data){
   if (!data || !Array.isArray(data.leaders)) return [];
   return data.leaders.map(j => {
@@ -768,27 +770,6 @@ function setLeaders(list, sourceLabel){
   renderMatchupHeatmap();
 }
 
-/* --- NEW: try to auto-load leaders.json when running on a real web server (GitHub Pages) --- */
-async function tryLoadLeadersFromWeb(){
-  try{
-    // Works both on root domain and on GitHub Pages subpath
-    const url = new URL("leaders.json", window.location.href);
-    const res = await fetch(url.toString(), { cache: "no-store" });
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const data = await res.json();
-    const list = normalizeLeaderJson(data);
-    if (!list.length) throw new Error("Leere leaders.json");
-    // Save into cache so it also works offline later
-    localStorage.setItem(LEADERS_CACHE_KEY, JSON.stringify(data));
-    setLeaders(list, "Web (leaders.json)");
-    return true;
-  } catch(e){
-    // If user opens index.html directly from file manager, fetch is often blocked -> ignore
-    console.warn("leaders.json Auto-Load fehlgeschlagen:", e);
-    return false;
-  }
-}
-
 function saveLeadersToCache(rawJsonText){
   localStorage.setItem(LEADERS_CACHE_KEY, rawJsonText);
 }
@@ -811,7 +792,7 @@ function loadLeadersFromCache(){
 function clearLeadersCache(){
   localStorage.removeItem(LEADERS_CACHE_KEY);
   setLeaders([], "—");
-  alert("Leader Cache gelöscht. Bitte leaders.json neu laden.");
+  alert("Leader Cache gelöscht. Beim nächsten Laden wird leaders.json neu gezogen (oder manuell laden).");
 }
 
 function openLeadersFilePicker(){
@@ -865,7 +846,7 @@ function renderLeaderPreview(which){
   }
 
   if (!l){
-    label.textContent = LEADERS.length ? "Bitte Leader aus Vorschlag wählen" : "Leaderliste fehlt: bitte leaders.json laden";
+    label.textContent = LEADERS.length ? "Bitte Leader aus Vorschlag wählen" : "Leaderliste fehlt: leaders.json konnte nicht geladen werden";
     img.style.display = "none";
     img.src = "";
     return;
@@ -874,6 +855,23 @@ function renderLeaderPreview(which){
   label.textContent = `Deck: ${leaderLabel(l)}`;
   img.src = l.img;
   img.style.display = "inline-block";
+}
+
+/* Auto-load leaders.json (GitHub Pages) */
+async function tryAutoLoadLeadersJson(){
+  try{
+    const res = await fetch("leaders.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    const list = normalizeLeaderJson(data);
+    if (!list.length) throw new Error("leaders.json hat falsches Format oder ist leer");
+    saveLeadersToCache(JSON.stringify(data));
+    setLeaders(list, "leaders.json");
+    return true;
+  } catch(e){
+    console.warn("leaders.json Auto-Load fehlgeschlagen:", e);
+    return false;
+  }
 }
 
 /* File input wiring */
@@ -914,10 +912,32 @@ const STORAGE_KEY = "op_tcg_manager_file_leaders_v2_close";
 let tournaments = [];
 let activeTournamentId = null;
 
-function isClosed(t){
-  return !!t?.closedAt;
+function isClosed(t){ return !!t?.closedAt; }
+
+function uuid(){
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+}
+function save(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournaments, activeTournamentId }));
+}
+function load(){
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return;
+  try{
+    const obj = JSON.parse(raw);
+    tournaments = obj.tournaments || [];
+    activeTournamentId = obj.activeTournamentId || (tournaments[0]?.id ?? null);
+  } catch(e){
+    console.error("Load error:", e);
+  }
+}
+function getActiveTournament(){
+  return tournaments.find(t => t.id === activeTournamentId) || null;
 }
 
+/* =======================
+   TURNIER: Abschluss
+======================= */
 function closeTournament(){
   const t = getActiveTournament();
   if (!t) return;
@@ -1039,31 +1059,7 @@ function toggleTimerFullscreen(){
 }
 
 /* =======================
-   HELPERS
-======================= */
-function uuid(){
-  return Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
-}
-function save(){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify({ tournaments, activeTournamentId }));
-}
-function load(){
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return;
-  try{
-    const obj = JSON.parse(raw);
-    tournaments = obj.tournaments || [];
-    activeTournamentId = obj.activeTournamentId || (tournaments[0]?.id ?? null);
-  } catch(e){
-    console.error("Load error:", e);
-  }
-}
-function getActiveTournament(){
-  return tournaments.find(t => t.id === activeTournamentId) || null;
-}
-
-/* =======================
-   TURNIERS
+   TURNIERE
 ======================= */
 function createTournament(){
   const input = document.getElementById("newTournamentName");
@@ -1183,7 +1179,7 @@ function addPlayer(){
     return;
   }
   if (!LEADERS.length){
-    alert("Bitte zuerst leaders.json laden (Button: Leader JSON laden).");
+    alert("Leaderliste fehlt. Bitte warten oder leaders.json prüfen.");
     return;
   }
 
@@ -1943,7 +1939,7 @@ function renderLeaderStatsAll(){
   tbody.innerHTML = "";
 
   if (!LEADERS.length){
-    tbody.innerHTML = `<tr><td colspan="7" class="muted">Bitte leaders.json laden (Button oben).</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7" class="muted">Leaderliste fehlt (leaders.json konnte nicht geladen werden).</td></tr>`;
     return;
   }
 
@@ -1979,7 +1975,7 @@ function renderLeaderStatsAll(){
 }
 
 function exportLeaderStatsCSV(){
-  if (!LEADERS.length){ alert("Bitte leaders.json laden."); return; }
+  if (!LEADERS.length){ alert("Leaderliste fehlt (leaders.json)."); return; }
 
   const rows = buildLeaderStatsAll();
   if (!rows.length){ alert("Keine Daten zum Export."); return; }
@@ -2145,7 +2141,7 @@ function renderMatchupHeatmap(){
 
   if (!LEADERS.length){
     thead.innerHTML = `<tr><th class="corner">Heatmap</th></tr>`;
-    tbody.innerHTML = `<tr><td class="muted">Bitte leaders.json laden.</td></tr>`;
+    tbody.innerHTML = `<tr><td class="muted">Leaderliste fehlt (leaders.json).</td></tr>`;
     return;
   }
 
@@ -2474,20 +2470,22 @@ function fullRender(){
 }
 
 /* =======================
-   INIT  (CHANGED: async, try web first)
+   INIT
 ======================= */
 window.onload = async function(){
-  // 1) On GitHub Pages / web: try auto-load leaders.json
-  const webOk = await tryLoadLeadersFromWeb();
+  // 1) Cache versuchen
+  let ok = loadLeadersFromCache();
 
-  // 2) If web not ok: try cache (offline)
-  const cacheOk = webOk ? true : loadLeadersFromCache();
+  // 2) Wenn kein Cache: automatisch leaders.json ziehen (GitHub Pages)
+  if (!ok){
+    ok = await tryAutoLoadLeadersJson();
+  }
 
-  // 3) If still nothing: show hint
-  if (!cacheOk){
+  // 3) Wenn alles fail: Status anzeigen
+  if (!ok){
     setLeaders([], "—");
     const el = document.getElementById("leadersStatus");
-    if (el) el.textContent = "Bitte leaders.json laden (Button oben)";
+    if (el) el.textContent = "leaders.json konnte nicht automatisch geladen werden. Nutze ggf. 'Leader JSON manuell laden'.";
   }
 
   load();
