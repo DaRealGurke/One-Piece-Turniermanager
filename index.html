@@ -482,7 +482,7 @@
 
 <body>
   <h1><span class="logo">OP</span>One Piece TCG – Turniermanager</h1>
-  <p class="subheading">Swiss · Ergebniswahl · 30+5 Timer · Deck-Rotation optional · Deck = Leader · Leader aus leaders.json (Auto-Load auf GitHub Pages)</p>
+  <p class="subheading">Kitchen Table Friday Events</p>
 
   <!-- TOP: TURNIERE -->
   <div class="top-section">
@@ -499,9 +499,7 @@
       </div>
 
       <p class="muted" style="margin:8px 0 0;">
-        Turniere werden lokal gespeichert (localStorage).
-        Leader werden automatisch aus <b>leaders.json</b> geladen (GitHub Pages) oder optional per Datei-Auswahl.
-        Bilder: <b>images/leaders/</b>
+       
       </p>
 
       <div class="field-row" style="margin-top:10px;">
@@ -2485,7 +2483,7 @@ window.onload = async function(){
   if (!ok){
     setLeaders([], "—");
     const el = document.getElementById("leadersStatus");
-    if (el) el.textContent = "leaders.json konnte nicht automatisch geladen werden. Nutze ggf. 'Leader JSON manuell laden'.";
+    if (el) el.textContent = "Bilder konnten nicht automatisch geladen werden.";
   }
 
   load();
@@ -2495,3 +2493,4 @@ window.onload = async function(){
 
 </body>
 </html>
+
