@@ -2,26 +2,26 @@
   "leaders": [
 
     { "id":"OP01-001","name":"Roronoa Zoro","color":["Red"],"image":"images/leaders/OP01-001(alt).jpg" },
-    { "id":"OP01-003","name":"Monkey D. Luffy","color":["Red/Green"],"image":"images/leaders/OP01-003(alt).jpg" },
+    { "id":"OP01-003","name":"Monkey D. Luffy","color":["Red","Green"],"image":"images/leaders/OP01-003(alt).jpg" },
     { "id":"OP01-031","name":"Kouzuki Oden","color":["Green"],"image":"images/leaders/OP01-031 (Alt).jpg" },
-    { "id":"OP01-047","name":"Trafalgar Law","color":["Red/Green"],"image":"images/leaders/OP01-002(alt).jpg" },
+    { "id":"OP01-047","name":"Trafalgar Law","color":["Red","Green"],"image":"images/leaders/OP01-047(alt).jpg" },
     { "id":"OP01-060","name":"Donquixote Doflamingo","color":["Blue"],"image":"images/leaders/OP01-060 (alt).jpg" },
     { "id":"OP01-061","name":"Kaido","color":["Purple"],"image":"images/leaders/OP01-061 (alt).jpg" },
-    { "id":"OP01-062","name":"Crocodile","color":["Blue/Purple"],"image":"images/leaders/OP01-062 (alt).jpg" },
+    { "id":"OP01-062","name":"Crocodile","color":["Blue","Purple"],"image":"images/leaders/OP01-062 (alt).jpg" },
     { "id":"OP01-091","name":"King","color":["Purple"],"image":"images/leaders/OP01-091 (alt).jpg" },
 
     { "id":"OP02-001","name":"Edward Newgate","color":["Red"],"image":"images/leaders/OP02-001 (Alt).jpg" },
-    { "id":"OP02-002","name":"Monkey D. Garp","color":["Red/Black"],"image":"images/leaders/OP02-002ALT.jpg" },
+    { "id":"OP02-002","name":"Monkey D. Garp","color":["Red","Black"],"image":"images/leaders/OP02-002ALT.jpg" },
     { "id":"OP02-025","name":"Kin'emon","color":["Green"],"image":"images/leaders/OP02-025_Alt.jpg" },
-    { "id":"OP02-026","name":"Sanji","color":["Green/Blue"],"image":"images/leaders/OP02-026_Alt.jpg" },
+    { "id":"OP02-026","name":"Sanji","color":["Green","Blue"],"image":"images/leaders/OP02-026_Alt.jpg" },
     { "id":"OP02-049","name":"Emporio Ivankov","color":["Blue"],"image":"images/leaders/OP02-049_Alt.jpg" },
     { "id":"OP02-071","name":"Magellan","color":["Purple"],"image":"images/leaders/OP02-071_Alt.jpg" },
-    { "id":"OP02-072","name":"Zephyr","color":["Purple/Black"],"image":"images/leaders/OP02-072_Alt.jpg" },
+    { "id":"OP02-072","name":"Zephyr","color":["Purple","Black"],"image":"images/leaders/OP02-072_Alt.jpg" },
     { "id":"OP02-093","name":"Smoker","color":["Black"],"image":"images/leaders/OP02-093_Alt.jpg" },
 
     { "id":"OP03-001","name":"Portgas D. Ace","color":["Red"],"image":"images/leaders/OP03-001_Alt.jpg" },
     { "id":"OP03-021","name":"Kuro","color":["Green"],"image":"images/leaders/OP03-021_Alt.jpg" },
-	{ "id":"OP03-022","name":"Arlong","color":["Yellow/Blue"],"image":"images/leaders/OP03-022_Alt.jpg" },
+	{ "id":"OP03-022","name":"Arlong","color":["Yellow","Blue"],"image":"images/leaders/OP03-022_Alt.jpg" },
     { "id":"OP03-040","name":"Nami","color":["Green"],"image":"images/leaders/OP03-040_Alt.jpg" },
     { "id":"OP03-058","name":"Iceburg","color":["Blue"],"image":"images/leaders/OP03-058_Alt.jpg" },
     { "id":"OP03-076","name":"Rob Lucci","color":["Black"],"image":"images/leaders/OP03-076_Alt.jpg" },
@@ -35,7 +35,7 @@
 	{ "id":"OP04-040","name":"Queen","color":["Yellow","Blue"],"image":"images/leaders/OP04-040(alt).jpg" },
     { "id":"OP04-058","name":"Crocodile","color":["Blue","Purple"],"image":"images/leaders/OP04-058(alt).jpg" },
 
-    { "id":"OP05-001","name":"Sabo","color":["Red","Black"],"image":"images/leadersOP05-001alt.jpg" },
+    { "id":"OP05-001","name":"Sabo","color":["Red","Black"],"image":"images/leaders/OP05-001alt.jpg" },
     { "id":"OP05-002","name":"Belo Betty","color":["Red","Yellow"],"image":"images/leaders/OP05-002alt.jpg" },
 	{ "id":"OP05-022","name":"Donquixote Rosinante","color":["Green","Blue"],"image":"images/leaders/OP05-022(alt).jpg" },
     { "id":"OP05-041","name":"Sakazuki","color":["Blue","Black"],"image":"images/leaders/OP05-041alt.jpg" },
@@ -55,7 +55,7 @@
 	{ "id":"OP07-038","name":"Boa Hancock","color":["Blue"],"image":"images/leaders/OP07-038alt.jpg" },
 	{ "id":"OP07-059","name":"Foxy","color":["Purple"],"image":"images/leaders/OP07-059alt.jpg" },
 	{ "id":"OP07-079","name":"Rob Lucci","color":["Black"],"image":"images/leaders/OP07-079alt.jpg" },
-    { "id":"OP07-079","name":"Vegapunk","color":["Yellow"],"image":"images/leaders/OP07-097alt.jpg" },
+    { "id":"OP07-097","name":"Vegapunk","color":["Yellow"],"image":"images/leaders/OP07-097alt.jpg" },
 	
 	{ "id":"OP08-098","name":"Kalgara","color":["Yellow"],"image":"images/leaders/OP08-098alt.jpg" },
 	
@@ -108,6 +108,7 @@
 
   ]
 }
+
 
 
 
