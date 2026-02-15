@@ -1,7 +1,7 @@
 {
   "leaders": [
 
-    { "id":"OP01-001","name":"Roronoa Zoro","color":["Red"],"image":"images/leaders/OP01-001(alt).jpg" },
+    { "id":"OP01-001","name":"Roronoa Zoro","color":["Red"],"image":"images/leaders/OP01-001(alt).webp" },
     { "id":"OP01-002","name":"Monkey D. Luffy","color":["Red/Green"],"image":"images/leaders/OP01-003(alt).png" },
     { "id":"OP01-031","name":"Kouzuki Oden","color":["Green"],"image":"images/leaders/OP01-031 (Alt).png" },
     { "id":"OP01-047","name":"Trafalgar Law","color":["Red/Green"],"image":"images/leaders/OP01-002(alt).png" },
@@ -102,3 +102,4 @@
 
   ]
 }
+
