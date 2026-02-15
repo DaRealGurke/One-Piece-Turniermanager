@@ -102,12 +102,13 @@
 	{ "id":"EB04-001","name":"Jewelry Bonney","color":["Red","Yellow"],"image":"images/leaders/EB04-001(alt).jpg" },
 	
 	{ "id":"ST012-001","name":"Roronoa Zoro & Sanji","color":["Green","Blue"],"image":"images/leaders/ST012-001.jpg" },
-	{ "id":"ST29-001","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/ST29-001.jpg" },
+	{ "id":"ST29-001","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/ST29-001.jpg" }
 
 
 
   ]
 }
+
 
 
 
