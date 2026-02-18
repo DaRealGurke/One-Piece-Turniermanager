@@ -6,7 +6,7 @@
     { "id":"OP01-031","name":"Kouzuki Oden","color":["Green"],"image":"images/leaders/OP01-031 (Alt).jpg" },
     { "id":"OP01-047","name":"Trafalgar Law","color":["Red","Green"],"image":"images/leaders/OP01-047(alt).jpg" },
     { "id":"OP01-060","name":"Donquixote Doflamingo","color":["Blue"],"image":"images/leaders/OP01-060 (alt).jpg" },
-    { "id":"OP01-061","name":"Kaido","color":["Purple"],"image":"images/leaders/OP01-061 (alt).jpg" },
+    { "id":"OP01-061","name":"Kaido","color":["Blue","Purple"],"image":"images/leaders/OP01-061 (alt).jpg" },
     { "id":"OP01-062","name":"Crocodile","color":["Blue","Purple"],"image":"images/leaders/OP01-062 (alt).jpg" },
     { "id":"OP01-091","name":"King","color":["Purple"],"image":"images/leaders/OP01-091 (alt).jpg" },
 
@@ -108,6 +108,7 @@
 
   ]
 }
+
 
 
 
