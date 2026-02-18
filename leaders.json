@@ -107,6 +107,7 @@
 	{ "id":"OP15-058","name":"Enel","color":["Purple"],"image":"images/leaders/OP15-058(alt).jpg" },
 	{ "id":"OP15-098","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/OP15-098(alt).jpg" },
 
+	  { "id":"EB02-010","name":"Monkey.D.Luffy","color":["Green","Purple"],"image":"images/leaders/EB02-010(alt).jpg" },
 	{ "id":"EB03-001","name":"Nefeltari Vivi EB03","color":["Red","Blue"],"image":"images/leaders/EB03-001(alt).jpg" },
 	{ "id":"EB04-001","name":"Jewelry Bonney","color":["Red","Yellow"],"image":"images/leaders/EB04-001(alt).jpg" },
 
@@ -124,6 +125,7 @@
 
   ]
 }
+
 
 
 
