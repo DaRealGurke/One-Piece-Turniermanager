@@ -1648,21 +1648,28 @@ function startNextRound(){
   }
 
   t.rounds.push({ number: nextNumber, pairings });
-  save();
-  renderRounds();
-  rebuildStandings();
-  renderPlayers();
-  renderLeaderStatsAll();
-  renderMatchupHeatmap();
-  renderWinners();
-  
-  // automatisch zu Matches-Tab wechseln
+ save();
+renderRounds();
+rebuildStandings();
+renderPlayers();
+renderLeaderStatsAll();
+renderMatchupHeatmap();
+renderWinners();
+
+// 👉 automatisch zum Matches-Tab wechseln
 activateTab("tab_timer");
 
-// optional: nach oben scrollen
+// 👉 nach oben scrollen
 window.scrollTo({ top: 0, behavior: "smooth" });
 
+// 👉 Timer automatisch starten
+resetTimer();
+toggleTimer();
+
+// 👉 neue Runde kurz hervorheben
+setTimeout(() => highlightNewestRound(), 100);
 }
+
 
 function setPairingResult(roundNumber, pairingId, value){
   const t = getActiveTournament();
@@ -2693,6 +2700,20 @@ function initTabs(){
 /* =======================
    INIT
 ======================= */
+function highlightNewestRound(){
+  const rounds = document.querySelectorAll("#roundsContainer > div");
+  if (!rounds.length) return;
+
+  const newest = rounds[0]; // neueste Runde ist oben
+  newest.style.boxShadow = "0 0 30px rgba(0,229,255,.6)";
+  newest.style.transition = "all 0.4s ease";
+
+  setTimeout(() => {
+    newest.style.boxShadow = "";
+  }, 600000);
+}
+
+
 window.onload = async function(){
   // 1) Cache versuchen
   let ok = loadLeadersFromCache();
