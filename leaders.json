@@ -114,7 +114,7 @@
     { "id":"P-117","name":"Nami","color":["Blue"],"image":"images/leaders/P-117.png" },
 	{ "id":"P-122","name":"Ace&Sabo&Luffy","color":["Red"],"image":"images/leaders/P-122.png" },
 	  
-	{ "id":"ST04-001","name":"Kaido","color":["Purple"],"image":"images/leaders/ST04-001.jpg" },
+	{ "id":"ST04-001","name":"Kaido","color":["Purple"],"image":"images/leaders/ST04-001.png" },
 	{ "id":"ST011-001","name":"Uta","color":["Green"],"image":"images/leaders/ST011-001.png" },
 	{ "id":"ST012-001","name":"Roronoa Zoro & Sanji","color":["Green","Blue"],"image":"images/leaders/ST012-001.jpg" },
 	{ "id":"ST13-003","name":"Monkey.D.Luffy","color":["Yellow","Black"],"image":"images/leaders/ST13-003.jpg" },
@@ -125,6 +125,7 @@
 
   ]
 }
+
 
 
 
