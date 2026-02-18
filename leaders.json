@@ -111,6 +111,7 @@
 	{ "id":"EB04-001","name":"Jewelry Bonney","color":["Red","Yellow"],"image":"images/leaders/EB04-001(alt).jpg" },
 
     { "id":"P-117","name":"Nami","color":["Blue"],"image":"images/leaders/P-117.png" },
+	{ "id":"P-122","name":"Ace&Sabo&Luffy","color":["Red"],"image":"images/leaders/P-122.png" },
 	  
 	{ "id":"ST04-001","name":"Kaido","color":["Purple"],"image":"images/leaders/ST04-001.jpg" },
 	{ "id":"ST011-001","name":"Uta","color":["Green"],"image":"images/leaders/ST011-001.png" },
@@ -123,6 +124,7 @@
 
   ]
 }
+
 
 
 
