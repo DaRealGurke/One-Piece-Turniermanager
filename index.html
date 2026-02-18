@@ -1655,6 +1655,13 @@ function startNextRound(){
   renderLeaderStatsAll();
   renderMatchupHeatmap();
   renderWinners();
+  
+  // automatisch zu Matches-Tab wechseln
+activateTab("tab_timer");
+
+// optional: nach oben scrollen
+window.scrollTo({ top: 0, behavior: "smooth" });
+
 }
 
 function setPairingResult(roundNumber, pairingId, value){
