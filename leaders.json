@@ -91,6 +91,7 @@
 	
 	
 	{ "id":"OP13-001","name":"Monkey.D.Luffy","color":["Red","Green"],"image":"images/leaders/OP13-001(alt).jpg" },
+	{ "id":"OP13-002","name":"Portgas.D.Ace","color":["Red","Blue"],"image":"images/leaders/OP13-002(alt).jpg" },
 	{ "id":"OP13-003","name":"Gol.D.Roger","color":["Red","Purple"],"image":"images/leaders/OP13-003(alt).jpg" },
 	{ "id":"OP13-079","name":"Imu","color":["Black"],"image":"images/leaders/OP13-079(alt).jpg" },
 	{ "id":"OP13-100","name":"Jewelry Bonney","color":["Yellow"],"image":"images/leaders/OP13-100(alt).jpg" },
