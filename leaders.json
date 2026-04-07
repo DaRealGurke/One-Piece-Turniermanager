@@ -2,7 +2,7 @@
   "leaders": [
 
     { "id":"OP01-001","name":"Roronoa Zoro","color":["Red"],"image":"images/leaders/OP01-001(alt).jpg" },
-	   { "id":"OP01-002","name":"Trafalgar Law","color":["Red","Green"],"image":"images/leaders/OP01-001(alt).jpg" },
+	{ "id":"OP01-002","name":"Trafalgar Law","color":["Red","Green"],"image":"images/leaders/OP01-002(alt).jpg" },
     { "id":"OP01-003","name":"Monkey D. Luffy","color":["Red","Green"],"image":"images/leaders/OP01-003(alt).jpg" },
     { "id":"OP01-031","name":"Kouzuki Oden","color":["Green"],"image":"images/leaders/OP01-031 (Alt).jpg" },
     { "id":"OP01-047","name":"Trafalgar Law","color":["Red","Green"],"image":"images/leaders/OP01-047(alt).jpg" },
@@ -60,7 +60,7 @@
 
     { "id":"OP08-002","name":"Marco","color":["Red","Blue"],"image":"images/leaders/OP08-002alt.jpg" },
 	{ "id":"OP08-001","name":"Tony.Tony.Chopper","color":["Yellow"],"image":"images/leaders/OP08-001alt.jpg" },
-	  { "id":"OP08-021","name":"Carrot","color":["Green"],"image":"images/leaders/OP08-001alt.jpg" },
+	{ "id":"OP08-021","name":"Carrot","color":["Green"],"image":"images/leaders/OP08-021alt.jpg" },
 	{ "id":"OP08-057","name":"King","color":["Black","Purple"],"image":"images/leaders/OP08-057alt.jpg" },
 	{ "id":"OP08-058","name":"Charlotte Pudding","color":["Yellow","Purple"],"image":"images/leaders/OP08-058alt.jpg" },
 	{ "id":"OP08-098","name":"Kalgara","color":["Yellow"],"image":"images/leaders/OP08-098alt.jpg" },
@@ -73,9 +73,9 @@
 	{ "id":"OP09-062","name":"Nico Robin","color":["Yellow","Purple"],"image":"images/leaders/OP09-062alt.jpg" },
 	{ "id":"OP09-081","name":"Marshall D.Teach","color":["Black"],"image":"images/leaders/OP09-081alt.jpg" },
 
-	  { "id":"OP10-001","name":"Smoker","color":["Red","Green"],"image":"images/leaders/OP10-022alt.jpg" },
-	  { "id":"OP10-002","name":"Ceasar Clown","color":["Red","Blue"],"image":"images/leaders/OP10-022alt.jpg" },
-	  { "id":"OP10-003","name":"Sugar","color":["Red","Purple"],"image":"images/leaders/OP10-022alt.jpg" },
+	{ "id":"OP10-001","name":"Smoker","color":["Red","Green"],"image":"images/leaders/OP10-001alt.jpg" },
+	  { "id":"OP10-002","name":"Ceasar Clown","color":["Red","Blue"],"image":"images/leaders/OP10-002alt.jpg" },
+	{ "id":"OP10-003","name":"Sugar","color":["Red","Purple"],"image":"images/leaders/OP10-003alt.jpg" },
 	{ "id":"OP10-022","name":"Trafalgar Law","color":["Yellow","Green"],"image":"images/leaders/OP10-022alt.jpg" },
 	{ "id":"OP10-042","name":"Usopp","color":["Black","Blue"],"image":"images/leaders/OP10-042alt.jpg" },
 	{ "id":"OP10-099","name":"Eustass Captain Kid","color":["Yellow"],"image":"images/leaders/OP10-099alt.jpg" },
@@ -98,7 +98,7 @@
 	{ "id":"OP13-001","name":"Monkey.D.Luffy","color":["Red","Green"],"image":"images/leaders/OP13-001(alt).jpg" },
 	{ "id":"OP13-002","name":"Portgas.D.Ace","color":["Red","Blue"],"image":"images/leaders/OP13-002(alt).jpg" },
 	{ "id":"OP13-003","name":"Gol.D.Roger","color":["Red","Purple"],"image":"images/leaders/OP13-003(alt).jpg" },
-	  { "id":"OP13-004","name":"Sabo","color":["Red","Black"],"image":"images/leaders/OP13-003(alt).jpg" },
+	{ "id":"OP13-004","name":"Sabo","color":["Red","Black"],"image":"images/leaders/OP13-004(alt).jpg" },
 	{ "id":"OP13-079","name":"Imu","color":["Black"],"image":"images/leaders/OP13-079(alt).jpg" },
 	{ "id":"OP13-100","name":"Jewelry Bonney","color":["Yellow"],"image":"images/leaders/OP13-100(alt).jpg" },
 	
@@ -137,7 +137,7 @@
 	{ "id":"ST012-001","name":"Roronoa Zoro & Sanji","color":["Green","Blue"],"image":"images/leaders/ST012-001.jpg" },
 	{ "id":"ST13-003","name":"Monkey.D.Luffy","color":["Yellow","Black"],"image":"images/leaders/ST13-003.jpg" },
 	{ "id":"ST21-001","name":"Monkey.D.Luffy","color":["Red"],"image":"images/leaders/ST21-001.jpg" },
-	  { "id":"ST22-001","name":"Ace & Newgate","color":["Blue"],"image":"images/leaders/ST21-001.jpg" },
+	{ "id":"ST22-001","name":"Ace & Newgate","color":["Blue"],"image":"images/leaders/ST22-001.jpg" },
 	{ "id":"ST29-001","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/ST29-001.jpg" }
 
 
