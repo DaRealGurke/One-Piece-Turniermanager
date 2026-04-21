@@ -1589,6 +1589,64 @@ function startNextRound(){
 
   resetTimer();
 
+  // ===== Spezialfall: genau 4 Spieler => feste Round-Robin-Rotation =====
+  if (t.players.length === 4){
+    // stabile Basisreihenfolge: die Reihenfolge, in der Spieler angelegt wurden
+    const p = t.players.slice();
+
+    // 3 mögliche Paarungssets bei 4 Spielern
+    const rrSets = [
+      [[0,1],[2,3]], // A-B / C-D
+      [[0,2],[1,3]], // A-C / B-D
+      [[0,3],[1,2]]  // A-D / B-C
+    ];
+
+    // Runde 1-3 = Set 0,1,2
+    // Runde 4-6 = wieder 0,1,2
+    const setIndex = (nextNumber - 1) % 3;
+    const chosenSet = rrSets[setIndex];
+
+    const pairings = [];
+    let table = 1;
+
+    for (const pair of chosenSet){
+      const p1 = p[pair[0]];
+      const p2 = p[pair[1]];
+
+      const pairing = {
+        id: uuid(),
+        table,
+        p1Id: p1.id,
+        p2Id: p2.id,
+        p1DeckKey: null,
+        p2DeckKey: null,
+        result: null
+      };
+
+      assignDecksForPairing(t, pairing);
+      pairings.push(pairing);
+      table++;
+    }
+
+    t.rounds.push({ number: nextNumber, pairings });
+    save();
+    renderRounds();
+    rebuildStandings();
+    renderPlayers();
+    renderLeaderStatsAll();
+    renderMatchupHeatmap();
+    renderWinners();
+
+    if (typeof activateTab === "function") activateTab("tab_timer");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setTimeout(() => {
+      if (typeof highlightNewestRound === "function") highlightNewestRound();
+    }, 100);
+
+    return;
+  }
+
+  // ===== Standardlogik für alle anderen Spielerzahlen =====
   let order;
   const standings = computeStandings(t);
   if (nextNumber === 1 || !standings.length){
@@ -1648,26 +1706,19 @@ function startNextRound(){
   }
 
   t.rounds.push({ number: nextNumber, pairings });
- save();
-renderRounds();
-rebuildStandings();
-renderPlayers();
-renderLeaderStatsAll();
-renderMatchupHeatmap();
-renderWinners();
+  save();
+  renderRounds();
+  rebuildStandings();
+  renderPlayers();
+  renderLeaderStatsAll();
+  renderMatchupHeatmap();
+  renderWinners();
 
-// 👉 automatisch zum Matches-Tab wechseln
-activateTab("tab_timer");
-
-// 👉 nach oben scrollen
-window.scrollTo({ top: 0, behavior: "smooth" });
-
-// 👉 Timer automatisch starten
-resetTimer();
-toggleTimer();
-
-// 👉 neue Runde kurz hervorheben
-setTimeout(() => highlightNewestRound(), 100);
+  if (typeof activateTab === "function") activateTab("tab_timer");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    if (typeof highlightNewestRound === "function") highlightNewestRound();
+  }, 100);
 }
 
 
