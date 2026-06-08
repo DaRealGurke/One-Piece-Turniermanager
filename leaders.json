@@ -118,6 +118,14 @@
 	{ "id":"OP15-058","name":"Enel","color":["Purple"],"image":"images/leaders/OP15-058(alt).jpg" },
 	{ "id":"OP15-098","name":"Monkey.D.Luffy","color":["Yellow"],"image":"images/leaders/OP15-098(alt).jpg" },
 
+	   
+  { "id":"OP16-001","name":"Portgas.D.Ace","color":["Red"],"image":"images/leaders/OP16-001_AA.jpg" },
+	  { "id":"OP16-028","name":"Monkey.D.Luffy","color":["Green","Blue"],"image":"images/leaders/OP16-022_AA.jpg" },
+	    { "id":"OP16-041","name":"Buggy","color":["Blue"],"image":"images/leaders/OP16-041_AA.jpg" },
+	    { "id":"OP16-060","name":"Sengoku","color":["Purple"],"image":"images/leaders/OP16-060_AA.jpg" },
+	    { "id":"OP16-079","name":"Yamato","color":["Black"],"image":"images/leaders/OP16-079_AA.jpg" },
+	    { "id":"OP16-080","name":"Marshall.D.Teach","color":["Black","Yellow"],"image":"images/leaders/OP16-080_AA.jpg" },
+
 
 	{ "id":"EB01-001","name":"Kouzuki Oden","color":["Red","Green"],"image":"images/leaders/EB02-010(alt).jpg" },
 	{ "id":"EB01-021","name":"Hannyabal","color":["Blue","Purple"],"image":"images/leaders/EB02-010(alt).jpg" },
